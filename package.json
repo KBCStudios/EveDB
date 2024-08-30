@@ -6,6 +6,8 @@
     "dot-prop": "9.0.0"
   },
   "devDependencies": {
-    "@types/archiver": "6.0.2"
+    "@types/archiver": "6.0.2",
+    "@types/bun": "1.1.8",
+    "@types/node": "22.5.1"
   }
 }
