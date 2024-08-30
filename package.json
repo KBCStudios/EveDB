@@ -1,0 +1,11 @@
+{
+  "name": "evedb",
+  "dependencies": {
+    "ajv": "8.17.1",
+    "archiver": "7.0.1",
+    "dot-prop": "9.0.0"
+  },
+  "devDependencies": {
+    "@types/archiver": "6.0.2"
+  }
+}
