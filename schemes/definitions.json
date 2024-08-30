@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "global-auth": {
+      "type": "string",
+      "description": "Authentication key for requests. I recommend using secure keys, e.g. UUID"
+    },
+    "server-port": {
+      "type": "integer",
+      "default": 3000,
+      "description": "Port to listen"
+    },
+    "server-tables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "main"
+      ],
+      "description": "Database tables, default: ['main']"
+    },
+    "server-path": {
+      "type": "string",
+      "pattern": "^(\\.\/|\\.\\.\/)([a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]*\/?$",
+      "description": "Path to save all data"
+    },
+    "server-backup": {
+      "type": "object",
+      "description": "Configure the backup system",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Activates or deactivates the backup system."
+        },
+        "interval": {
+          "type": "integer",
+          "default": 3600000,
+          "description": "Interval to make backups"
+        },
+        "format": {
+          "type": "string",
+          "default": "zip",
+          "description": "Format to compress the backups. Default is 'zip'.",
+          "pattern": "^(zip|tar\\.gz)$"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    },
+    "client-url": {
+      "type": "string",
+      "description": "Database link",
+      "format": "uri"
+    },
+    "client-safe": {
+      "type": "boolean",
+      "default": true,
+      "description": "Disables actions that could be risky. Ex: Delete an entire table or delete several tables."
+    }
+  }
+}
