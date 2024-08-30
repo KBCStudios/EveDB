@@ -1,0 +1,52 @@
+# EveDB will have:
+- [ ] Authentication system
+- [ ] Server module
+  - [ ] Config all in one file (evedb.server.json)
+  - [ ] Server Class
+    - [ ] Router
+    - [ ] Basic functions (get, set & delete)
+    - [ ] Advanced functions
+      - [ ] Array Oriented
+        - [ ] Push
+        - [ ] Pop
+        - [ ] Shift
+        - [ ] Unshift
+      - [ ] Number Oriented
+        - [ ] Add (+)
+        - [ ] Sub (-)
+        - [ ] Multi (*)
+        - [ ] Divide (/)
+    - [ ] Backup system
+      - [ ] Optional usage
+      - [ ] Custom interval
+      - [ ] Custom format (zip & tar.gz)
+      - [ ] Create a backup whenever
+      - [ ] Consume a backup whenever
+      - [ ] Delete a backup whenever
+
+- [ ] Client module
+  - [ ] Config all in one file evedb.client.json
+  - [ ] Client Class
+    - [ ] Accesor "tables"
+      - [ ] Function wrapper
+      - [ ] Client side advanced functions
+        - [ ] Array Oriented
+          - [ ] Join - (Set/Get)
+          - [ ] Concat - (Set)
+          - [ ] Filter - (Get)
+          - [ ] Find - (Get)
+          - [ ] Some - (Get)
+        - [ ] Number Oriented
+          - [ ] Exponentiation (Set/Get)
+          - [ ] Left Shift (Set)
+          - [ ] Right Shift (Get)
+        - [ ] Miscelaneous
+          - [ ] Typeof - (Get)
+          - [ ] Equals - (Get)
+    - [ ] Accessor "backups"
+      - [ ] Function wrapper
+
+# Considerations
+- ⚠ Use Biome **always**
+- ⚠ Use Error Lens
+- ⚠ Do not use [Magic String/Number](https://www.youtube.com/watch?v=UrcxotUmThU)
