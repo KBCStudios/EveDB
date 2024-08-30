@@ -1,5 +1,5 @@
 {
-  "$schema": "../client.scheme.json",
+  "$schema": "https://raw.githubusercontent.com/KBCStudios/EveDB/main/schemes/client.scheme.json",
   "auth": "63a5937d-639b-456a-a9d5-ab106ce290a5",
   "url": "http://0.0.0.0:3000/"
 }
