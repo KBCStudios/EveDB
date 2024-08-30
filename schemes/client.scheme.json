@@ -7,9 +7,6 @@
     },
     "url": {
       "$ref": "./definitions.json#/definitions/client-url"
-    },
-    "safe": {
-      "$ref": "./definitions.json#/definitions/client-safe"
     }
   },
   "required": [

@@ -1,10 +1,10 @@
 # EveDB will have:
 - [ ] Authentication system
 - [ ] Server module
-  - [ ] Config all in one file (evedb.server.json)
+  - [x] Config all in one file (evedb.server.json)
   - [ ] Server Class
     - [ ] Router
-    - [ ] Basic functions (get, set & delete)
+    - [x] Basic functions (get, set & delete)
     - [ ] Advanced functions
       - [ ] Array Oriented
         - [ ] Push
@@ -25,7 +25,7 @@
       - [ ] Delete a backup whenever
 
 - [ ] Client module
-  - [ ] Config all in one file evedb.client.json
+  - [x] Config all in one file evedb.client.json
   - [ ] Client Class
     - [ ] Accesor "tables"
       - [ ] Function wrapper

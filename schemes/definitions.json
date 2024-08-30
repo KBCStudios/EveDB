@@ -50,15 +50,15 @@
         "enabled"
       ]
     },
+    "server-safe": {
+      "type": "boolean",
+      "default": true,
+      "description": "Disables actions that could be risky. Ex: Delete an entire table or delete several tables."
+    },
     "client-url": {
       "type": "string",
       "description": "Database link",
       "format": "uri"
-    },
-    "client-safe": {
-      "type": "boolean",
-      "default": true,
-      "description": "Disables actions that could be risky. Ex: Delete an entire table or delete several tables."
     }
   }
 }

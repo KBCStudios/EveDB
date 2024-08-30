@@ -16,6 +16,9 @@
     },
     "backup": {
       "$ref": "./definitions.json#/definitions/server-backup"
+    },
+    "safe": {
+      "$ref": "./definitions.json#/definitions/server-safe"
     }
   },
   "required": [
