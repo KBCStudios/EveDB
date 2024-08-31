@@ -4,5 +4,6 @@ export enum Keywords {
   from = "from",
   expected = "expected",
   action = "action",
-  config = "config"
+  config = "config",
+  suggest = "suggest"
 }

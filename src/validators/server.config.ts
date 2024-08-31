@@ -18,12 +18,14 @@ const $function = "$SERVER_CONFIG";
 
 export function $config() {
   const $path = join(process.cwd(), $config_file);
+  console.log(readFileSync($path, "utf-8"));
   let json: ServerScheme;
   if (!existsSync($path)) {
     warn(WarnMessages.default_config, $function);
     json = ServerScheme;
     writeFileSync($path, JSON.stringify(json, null, 2));
   } else json = JSON.parse(readFileSync($path, "utf-8"));
+
 
   return {
     valid: validator(json),

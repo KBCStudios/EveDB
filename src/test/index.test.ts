@@ -20,4 +20,4 @@ console.log($config().errors?.map(e => `${e.instancePath}: ${e.message}\n\t\t`).
 import { BaseServer } from "src/server/base.server";
 
 const server = new BaseServer("base");
-console.log(server);
+server.start();
