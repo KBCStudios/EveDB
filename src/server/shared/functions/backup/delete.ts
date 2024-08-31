@@ -3,6 +3,7 @@ import { error } from "src/auxiliar/logger";
 import { ErrorMessages } from "../../messages/error.messages";
 import { Keywords } from "../../messages/messages.keyword";
 import { $replacer } from "../miscellaneous";
+import { $regexp } from "./shared";
 
 const $function = "$delete";
 
@@ -11,7 +12,7 @@ const $function = "$delete";
  * @param file Backup file path to be deleted
  */
 export function $delete(file: string) {
-  if (!(/^.*\/\d+\.backup\.zip$/).test(file) || !existsSync(file)) {
+  if (!$regexp.folder.test(file) || !existsSync(file)) {
     error($replacer(ErrorMessages.invalid_zipfile, {
       [Keywords.action]: "remove"
     }), $function);

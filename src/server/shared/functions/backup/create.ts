@@ -6,15 +6,16 @@ import { ErrorMessages } from "../../messages/error.messages";
 import { FromMessages } from "../../messages/from.messages";
 import { Keywords } from "../../messages/messages.keyword";
 import { $replacer } from "../miscellaneous";
+import { $get_name } from "./shared";
 
 const $function = "$create";
 
 /**
  * Compress an entire directory into a single compressed file
  * @param folder Directory to compress
- * @param file Compressed file path
+ * @param out Compressed file path
  */
-export async function $create(folder: string, file: string) {
+export async function $create(folder: string, out: string) {
   try {
     if (!existsSync(folder) || !statSync(folder).isDirectory()) return error($replacer(ErrorMessages.invalid_directory, {
       [Keywords.path]: folder
@@ -23,7 +24,7 @@ export async function $create(folder: string, file: string) {
 
     for (const module of readdirSync(folder)) zip.addFile(module, readFileSync(join(folder, module)));
 
-    zip.writeZip(file);
+    zip.writeZip(join(out, $get_name()));
     return true;
   } catch (e) {
     error(e instanceof Error ? e.stack ?? e.message : String(e), $replacer(FromMessages.unexpected, {

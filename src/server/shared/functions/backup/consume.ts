@@ -5,6 +5,7 @@ import { ErrorMessages } from "../../messages/error.messages";
 import { FromMessages } from "../../messages/from.messages";
 import { Keywords } from "../../messages/messages.keyword";
 import { $replacer } from "../miscellaneous";
+import { $regexp } from "./shared";
 
 const $function = "$consume";
 
@@ -14,7 +15,7 @@ const $function = "$consume";
  * @param path Final directory path
  */
 export async function $consume(file: string, path: string) {
-  if (!(/^.*\/\d+\.backup\.zip$/).test(file) || !existsSync(file)) {
+  if (!$regexp.folder.test(file) || !existsSync(file)) {
     error($replacer(ErrorMessages.invalid_zipfile, {
       [Keywords.action]: "decompress"
     }), $function);

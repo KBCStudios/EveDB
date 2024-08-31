@@ -1,8 +1,10 @@
 import EventEmitter from "node:events";
 import type { IncomingMessage, Server, ServerResponse } from "node:http";
+import { join } from "node:path";
 import type { ErrorObject } from "ajv";
 import type { Serve } from "bun";
 import { error } from "src/auxiliar/logger";
+import type { ServerScheme } from "src/config.names";
 import type { JSONObject } from "src/types";
 import { $config } from "src/validators/server.config";
 import type { Events } from "./events";
@@ -15,7 +17,7 @@ export class BaseServer extends EventEmitter<Events> {
   public readonly config: {
     valid: boolean;
     errors: ErrorObject<string, Record<string, unknown>, unknown>[] | null | undefined;
-    json: JSONObject;
+    json: ServerScheme;
   };
   public readonly router: Router;
   public readonly server!: Server<typeof IncomingMessage, typeof ServerResponse> | Serve;
@@ -28,4 +30,9 @@ export class BaseServer extends EventEmitter<Events> {
 
     this.router = new Router();
   };
+
+  public start() {
+    const $base = join(process.cwd(), this.config.json.path);
+    const folders = [$base, join($base, "tables"), $base, join($base, "backup")];
+  }
 }

@@ -3,8 +3,8 @@ import { warn } from "src/auxiliar/logger";
 import { ErrorMessages } from "../../messages/error.messages";
 import { Keywords } from "../../messages/messages.keyword";
 import { $replacer } from "../miscellaneous";
+import { $regexp } from "./shared";
 
-const $regexp = /^\d+\.backup\.zip$/;
 const $function = "$list";
 
 /**
@@ -18,5 +18,5 @@ export function $list(folder: string): string[] {
     }), $function);
     return [];
   }
-  return readdirSync(folder).filter((w) => $regexp.test(w));
+  return readdirSync(folder).filter((w) => $regexp.file.test(w));
 }
