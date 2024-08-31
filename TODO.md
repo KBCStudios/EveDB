@@ -3,30 +3,33 @@
 - [ ] Server module
   - [x] Config all in one file (evedb.server.json)
   - [ ] Server Class
-    - [ ] Router
+    - [ ] Main Server Class
+    - [x] Router
     - [x] Basic functions (get, set & delete)
-    - [ ] Advanced functions
-      - [ ] Array Oriented
-        - [ ] Push
-        - [ ] Pop
-        - [ ] Shift
-        - [ ] Unshift
-      - [ ] Number Oriented
-        - [ ] Add (+)
-        - [ ] Sub (-)
-        - [ ] Multi (*)
-        - [ ] Divide (/)
+    - [x] Advanced functions
+      - [x] Array Oriented
+        - [x] Push
+        - [x] Pop
+        - [x] Shift
+        - [x] Unshift
+      - [x] Number Oriented
+        - [x] Add (+)
+        - [x] Sub (-)
+        - [x] Multi (*)
+        - [x] Divide (/)
     - [ ] Backup system
       - [ ] Optional usage
       - [ ] Custom interval
-      - [ ] Custom format (zip & tar.gz)
-      - [ ] Create a backup whenever
-      - [ ] Consume a backup whenever
-      - [ ] Delete a backup whenever
+      - [ ] ~Custom format (zip & tar.gz)~ **(REMOVED)**
+      - [x] Create a backup whenever
+      - [x] Consume a backup whenever
+      - [x] Get a list of backups whenever
+      - [x] Delete a backup whenever
 
 - [ ] Client module
   - [x] Config all in one file evedb.client.json
   - [ ] Client Class
+    - [ ] Main Client Class
     - [ ] Accesor "tables"
       - [ ] Function wrapper
       - [ ] Client side advanced functions
