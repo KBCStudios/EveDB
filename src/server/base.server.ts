@@ -1,6 +1,6 @@
 import EventEmitter from "node:events";
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
-import type { IncomingMessage, Server, ServerResponse } from "node:http";
+import type { Server as HTTPServer, IncomingMessage, ServerResponse } from "node:http";
 import { join } from "node:path";
 import type { ErrorObject } from "ajv";
 import type { Serve } from "bun";
@@ -20,14 +20,14 @@ const Distributions = {
   node: "node"
 };
 
-export class BaseServer extends EventEmitter<Events> {
+export class BaseServer<Server> extends EventEmitter<Events<Server>> {
   public readonly config: {
     valid: boolean;
     errors: ErrorObject<string, Record<string, unknown>, unknown>[] | null | undefined;
     json: ServerScheme;
   };
   public readonly router: Router;
-  public readonly server!: Server<typeof IncomingMessage, typeof ServerResponse> | Serve;
+  public server!: HTTPServer<typeof IncomingMessage, typeof ServerResponse> | Serve;
   constructor(private name: string) {
     super();
     this.config = $config();
@@ -38,7 +38,7 @@ export class BaseServer extends EventEmitter<Events> {
     this.router = new Router();
   };
 
-  public start() {
+  protected $start() {
     const $base = join(process.cwd(), this.config.json.path);
 
     const folders = {
@@ -53,6 +53,10 @@ export class BaseServer extends EventEmitter<Events> {
       const $path = join(folders.$tables, `${table}.json`);
       if (!existsSync($path)) writeFileSync($path, '{}');
     }
+
+    this.router.load("routes");
+
+    this.emit("start", this as unknown as Server);
 
     if (!this.server) warn($replacer(WarnMessages.base_server, {
       [Keywords.suggest]: $capitalize(Distributions.bun in process.versions ? Distributions.bun : Distributions.node)

@@ -18,7 +18,6 @@ const $function = "$SERVER_CONFIG";
 
 export function $config() {
   const $path = join(process.cwd(), $config_file);
-  console.log(readFileSync($path, "utf-8"));
   let json: ServerScheme;
   if (!existsSync($path)) {
     warn(WarnMessages.default_config, $function);

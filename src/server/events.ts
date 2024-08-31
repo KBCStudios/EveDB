@@ -1,5 +1,3 @@
-import type { BaseServer } from "./base.server";
-
-export interface Events {
-  on: [server: BaseServer];
+export interface Events<Server> {
+  start: [server: Server];
 }

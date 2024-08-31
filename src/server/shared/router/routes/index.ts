@@ -4,5 +4,7 @@ export default new Route(
   "/",
   "",
   [],
-  () => new Response("Hi!")
+  (ctx) => ctx.send(200, {
+    message: "Hello!"
+  })
 );

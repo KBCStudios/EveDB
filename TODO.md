@@ -4,9 +4,14 @@
   - [x] Config all in one file (evedb.server.json)
   - [ ] Server Class
     - [x] Base Server Class (PENDING)
-    - [ ] Bun Server Class
-    - [ ] Node Server Class
-    - [x] Router
+    - [x] Bun Server Class
+    - [x] Node Server Class
+    - [ ] Router
+      - [x] Main class and loader
+      - [ ] Get, Set & Delete Route
+      - [ ] Array oriented Routes
+      - [ ] Number oriented Routes
+      - [ ] Backups oriented Routes
     - [x] Basic functions (get, set & delete)
     - [x] Advanced functions
       - [x] Array Oriented

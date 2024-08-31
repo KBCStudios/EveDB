@@ -17,7 +17,11 @@ import { $config } from "src/validators/server.config";
 console.log($config().errors?.map(e => `${e.instancePath}: ${e.message}\n\t\t`).join(""));
  */
 
-import { BaseServer } from "src/server/base.server";
+import { BunServer } from "src/server/bun";
 
-const server = new BaseServer("base");
+const server = new BunServer();
+server.on("start", ($) => {
+  console.log(`Listening: ${$.config.json.port}`);
+});
+
 server.start();
