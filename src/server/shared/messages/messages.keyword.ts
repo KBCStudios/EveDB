@@ -3,5 +3,6 @@ export enum Keywords {
   value = "value",
   from = "from",
   expected = "expected",
-  action = "action"
+  action = "action",
+  config = "config"
 }

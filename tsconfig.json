@@ -41,10 +41,8 @@
         "./**/*.ts",
         "./*.ts",
         "./**/**/*.ts"
-    ],
+, "src/test/index.test.mjs"    ],
     "exclude": [
-        "node_modules",
-        "scripts/dist",
-        "./build.config.ts"
+        "node_modules"
     ]
 }

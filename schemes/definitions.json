@@ -38,12 +38,6 @@
           "type": "integer",
           "default": 3600000,
           "description": "Interval to make backups"
-        },
-        "format": {
-          "type": "string",
-          "default": "zip",
-          "description": "Format to compress the backups. Default is 'zip'.",
-          "pattern": "^(zip|tar\\.gz)$"
         }
       },
       "required": [
