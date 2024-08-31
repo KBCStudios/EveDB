@@ -3,7 +3,8 @@
 - [ ] Server module
   - [x] Config all in one file (evedb.server.json)
   - [ ] Server Class
-    - [ ] Main Server Class
+    - [ ] Bun Server Class
+    - [ ] Node Server Class
     - [x] Router
     - [x] Basic functions (get, set & delete)
     - [x] Advanced functions
