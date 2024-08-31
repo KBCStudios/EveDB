@@ -3,7 +3,7 @@
 - [ ] Server module
   - [x] Config all in one file (evedb.server.json)
   - [ ] Server Class
-    - [x] Base Server Class (PENSING)
+    - [x] Base Server Class (PENDING)
     - [ ] Bun Server Class
     - [ ] Node Server Class
     - [x] Router
