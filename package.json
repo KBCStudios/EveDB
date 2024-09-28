@@ -10,6 +10,7 @@
     "@types/adm-zip": "0.5.5",
     "@types/bun": "1.1.8",
     "@types/node": "22.5.1",
-    "ts-node": "10.9.2"
+    "ts-node": "10.9.2",
+    "unbuild": "^2.0.0"
   }
 }
