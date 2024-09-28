@@ -9,5 +9,5 @@ export interface RouteParam {
   name: string;
   description: string;
   value: RouteParamValue;
-  default?: string | number | boolean;
+  default: string | number | boolean | null;
 }

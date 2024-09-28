@@ -8,14 +8,17 @@ export class Router extends Map<string, Route> {
     for (const $route of readdirSync($base)) {
       const $path = join($base, $route);
       if (statSync($path).isDirectory()) {
-        this.load($path);
+        this.load(join(path, $route));
         continue;
       }
 
       delete require.cache[require($path)];
-      const route = require($path).default as Route;
+      const route = require($path)?.default as Route;
       if (!route || !(route instanceof Route)) continue;
       this.set(route.pathname, route);
     }
+  }
+  map<T>(fn: (item: Route, index: number, array: Route[]) => T): T[] {
+    return Array.from(this.values()).map(fn);
   }
 }

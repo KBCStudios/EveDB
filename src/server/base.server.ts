@@ -9,6 +9,7 @@ import { $capitalize } from "src/auxiliar/miscellaneous";
 import { ServerScheme } from "src/config.names";
 import { $config } from "src/validators/server.config";
 import type { Events } from "./events";
+import { BACKUP_DIR, TABLE_DIR } from "./shared/constants";
 import { $replacer } from "./shared/functions/miscellaneous";
 import { ErrorMessages } from "./shared/messages/error.messages";
 import { Keywords } from "./shared/messages/messages.keyword";
@@ -43,8 +44,8 @@ export class BaseServer<Server> extends EventEmitter<Events<Server>> {
 
     const folders = {
       $base,
-      $tables: join($base, "tables"),
-      $backups: join($base, "backups")
+      $tables: join($base, TABLE_DIR),
+      $backups: join($base, BACKUP_DIR)
     };
     for (const folder in folders)
       if (!existsSync(folders[folder])) mkdirSync(folders[folder]);

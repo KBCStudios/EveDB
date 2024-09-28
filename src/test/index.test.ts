@@ -17,6 +17,7 @@ import { $config } from "src/validators/server.config";
 console.log($config().errors?.map(e => `${e.instancePath}: ${e.message}\n\t\t`).join(""));
  */
 
+import { fetch } from "bun";
 import { BunServer } from "src/server/bun";
 
 const server = new BunServer();
@@ -25,3 +26,8 @@ server.on("start", ($) => {
 });
 
 server.start();
+
+fetch("http://localhost:3000/table/set?table=main&key=aa", {
+  body: '{a: "b"}',
+  method: "POST"
+}).then((out) => out.json().then(console.log));

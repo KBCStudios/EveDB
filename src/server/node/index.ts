@@ -9,7 +9,9 @@ export class NodeServer extends BaseServer<NodeServer> {
   constructor() {
     super("NodeServer");
     this.server = createServer((req, res) => {
-      const route = this.router.get(req.url ?? "/");
+      // biome-ignore lint/complexity/useLiteralKeys:
+      const url = new URL(`http://${process.env['HOST'] ?? 'localhost'}${req.url}`);
+      const route = this.router.get(url.pathname ?? "/");
       const ctx = new Context(this, req, res);
       if (!route) {
         return not_found(ctx);

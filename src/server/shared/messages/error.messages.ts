@@ -4,5 +4,8 @@ export enum ErrorMessages {
   invalid_value = "“{expected}” was expected as a value, not ‘{value}’.",
   invalid_directory = "The directory “{path}” does not exist or is not a directory!",
   invalid_zipfile = "The given file to {action} is not in a valid format or does not exist!",
-  invalid_config = 'The configuration given is invalid, check the following settings:{config}'
+  invalid_config = 'The configuration given is invalid, check the following settings:{config}',
+
+  missing_params = 'Parameters are needed: {params}',
+  invalid_method = "The {method} method is invalid, only {expected} methods are accepted."
 }
